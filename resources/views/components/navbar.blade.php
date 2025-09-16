@@ -39,6 +39,7 @@
                             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
                             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
                         @else
+                            <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea un articolo</a></li>
                             <li>
                                 <a class="dropdown-item" href="#"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
