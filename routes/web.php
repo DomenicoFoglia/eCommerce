@@ -14,3 +14,6 @@ Route::get('article/index', [ArticleController::class, 'index'])->name('article.
 
 //Pagina dettaglio prodotto
 Route::get('/show/article/{article}', [ArticleController::class, 'show'])->name('article.show');
+
+//Pagine elenco prodotti per categoria
+Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
