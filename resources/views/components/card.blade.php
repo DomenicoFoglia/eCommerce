@@ -5,7 +5,7 @@
         <h6 class="card-subtitle text-body-secondary">
             {{ $article->price ? $article->price . ' $' : 'Prezzo non disponibile' }} </h6>
         <div class="d-flex justify-content-evenly align-items-center mt-5">
-            <a href="#" class="btn btn-primary">Dettaglio</a>
+            <a href="{{ route('article.show', $article) }}" class="btn btn-primary">Dettaglio</a>
             <a href="" class="btn btn-outline-info">Categoria</a>
         </div>
     </div>
