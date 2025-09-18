@@ -21,4 +21,11 @@ class Article extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function setAccepted($value)
+    {
+        $this->is_accepted = $value;
+        $this->save();
+        return true;
+    }
 }

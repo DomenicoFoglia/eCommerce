@@ -53,6 +53,15 @@
                             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
                             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
                         @else
+                            @auth
+                                @if (Auth::user()->is_revisor)
+                                    <li class="nav-item">
+                                        <a href="{{ route('revisor.index') }}"
+                                            class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25">Area
+                                            Revisore</a>
+                                    </li>
+                                @endif
+                            @endauth
                             <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea un articolo</a></li>
                             <li>
                                 <a class="dropdown-item" href="#"
