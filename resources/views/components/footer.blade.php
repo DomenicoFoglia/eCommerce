@@ -79,7 +79,7 @@
                         Useful links
                     </h6>
                     <p>
-                        <a href="#!" class="text-reset">Pricing</a>
+                        <a href="{{ route('become.revisor') }}" class="text-reset">Diventa Revisore</a>
                     </p>
                     <p>
                         <a href="#!" class="text-reset">Settings</a>
