@@ -44,6 +44,9 @@
                         aria-expanded="false">
                         @auth
                             Ciao {{ Auth::user()->name }}!
+                            @if (Auth::user()->is_revisor && \App\Models\Article::toBeRevisedCount() > 0)
+                                <span class="postion-absolute transalte-middle badge rounded-pill bg-danger">!</span>
+                            @endif
                         @else
                             Ciao, accedi!
                         @endauth
@@ -55,10 +58,15 @@
                         @else
                             @auth
                                 @if (Auth::user()->is_revisor)
-                                    <li class="nav-item">
-                                        <a href="{{ route('revisor.index') }}"
-                                            class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25">Area
-                                            Revisore</a>
+                                    <li>
+                                        <a href="{{ route('revisor.index') }}" class="dropdown-item position-relative">
+                                            Area Revisore
+                                            @if (\App\Models\Article::toBeRevisedCount() > 0)
+                                                <span class="position-absolute badge mx-1 rounded-pill bg-danger">
+                                                    {{ \App\Models\Article::toBeRevisedCount() }}
+                                                </span>
+                                            @endif
+                                        </a>
                                     </li>
                                 @endif
                             @endauth
