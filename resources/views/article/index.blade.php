@@ -5,7 +5,7 @@
                 <h1 class="text-center display-1">Tutti gli articoli</h1>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center">
+        {{-- <div class="row justify-content-center align-items-center">
             @forelse($articles as $article)
                 <div class="col-12 col-md-3">
                     <x-card :article="$article" />
@@ -17,6 +17,9 @@
                     </div>
                 </div>
             @endforelse
+        </div> --}}
+        <div id="articles-list" data-per-page="10" class="row justify-content-center align-items-center py-5">
+
         </div>
     </div>
     <div class="d-flex justify-content-center">
@@ -24,4 +27,7 @@
             {{ $articles->links() }}
         </div>
     </div>
+
+    @viteReactRefresh
+    @vite('resources/js/app.jsx')
 </x-layout>

@@ -9,6 +9,7 @@
             {{ session('message') }}
         </div>
     @endif
+
     <div class="container-fluid text-center bg-body-tertiary">
         <div class="row vh-100 justify-content-center align-items-center">
             <div class="col-12">
@@ -20,16 +21,15 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center py-5">
-            @forelse ($articles as $article)
-                <div class="col-12 col-md-3">
-                    <x-card :article="$article" />
-                </div>
-            @empty
-                <div class="col-12">
-                    <h3 class="text-center">Non sono stati creati ancora articoli</h3>
-                </div>
-            @endforelse
+
+        {{-- Qui React renderizzerà la lista degli articoli --}}
+        <div id="articles-list" data-per-page="6" data-show-pagination="false"
+            class="row justify-content-center align-items-center py-5">
+
         </div>
     </div>
+
+    {{-- Import React --}}
+    @viteReactRefresh
+    @vite('resources/js/app.jsx')
 </x-layout>

@@ -6,7 +6,7 @@
                         class="fst-italic fw-bold">{{ $category->name }}</span></h1>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center py-5">
+        {{-- <div class="row justify-content-center align-items-center py-5">
             @forelse($articles as $article)
                 <div class="col-12 col-md-3">
                     <x-card :article="$article" />
@@ -21,6 +21,9 @@
                     @endauth
                 </div>
             @endforelse
-        </div>
+        </div> --}}
+        <div id="articles-by-category" data-category-id="{{ $category->id }}"></div>
     </div>
+    @viteReactRefresh
+    @vite('resources/js/app.jsx')
 </x-layout>
