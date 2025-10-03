@@ -84,6 +84,8 @@
                             @endauth
                             <li><a class="dropdown-item"
                                     href="{{ route('create.article') }}">{{ __('ui.navbar.createListing') }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('create.article-react') }}">Crea Articolo
+                                    (React)</a></li>
                             <li>
                                 <a class="dropdown-item" href="#"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">

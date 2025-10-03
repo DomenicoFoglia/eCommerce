@@ -17,9 +17,16 @@ class ArticleController extends Controller implements HasMiddleware
         ];
     }
 
+    //Create per pagina Livewire
     public function create()
     {
         return view('article.create');
+    }
+
+    //Create per pagina React
+    public function createReact()
+    {
+        return view('article.create-react');
     }
 
     public function index()

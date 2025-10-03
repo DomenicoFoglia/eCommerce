@@ -4,11 +4,17 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ArticleController as ArticleReact;
+
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
-//Pagina crea articolo
+//Pagina crea articolo Livewire
 Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
+//Pagina crea articolo React
+Route::get('create/article-react', [ArticleController::class, 'createReact'])->name('create.article-react');
+Route::middleware('auth')->post('/articles', [ArticleReact::class, 'store']);
+
 
 //Pagina lista prodotti
 Route::get('article/index', [ArticleController::class, 'index'])->name('article.index');

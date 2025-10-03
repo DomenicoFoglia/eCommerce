@@ -2,6 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import ArticlesList from "./components/ArticlesList";
 import ArticlesByCategory from "./components/ArticlesByCategory";
+import CreateArticleForm from "./components/CreateArticleForm";
+
+
+
+//Creazione articoli
+const createArticleElement = document.getElementById("create-article-react");
+if(createArticleElement){
+    ReactDOM.createRoot(createArticleElement).render(
+        <CreateArticleForm />
+    );
+}
 
 //Lista tutti gli articoli
 const articlesListElement = document.getElementById("articles-list");
