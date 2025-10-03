@@ -35,7 +35,7 @@
                             <li>
                                 <a class="dropdown-item text-capitalize"
                                     href="{{ route('byCategory', ['category' => $category]) }}">
-                                    {{ __("ui.$category->name") }}
+                                    {{ __('ui.categories.' . $category->name) }}
                                 </a>
                             </li>
                         @endforeach

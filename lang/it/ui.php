@@ -119,17 +119,18 @@ return
         ],
 
 
-        'Elettronica' => 'Elettronica',
-        'Abbigliamento' => 'Abbigliamento',
-        'Salute e bellezza' => 'Salute e Bellezza',
-        'Casa e giardinaggio' => 'Casa e Giardinaggio',
-        'Giocattoli' => 'Giocattoli',
-        'Sport' => 'Sport',
-        'Animali domestici' => 'Animali domestici',
-        'Libri e riviste' => 'Libri e Riviste',
-        'Accessori' => 'Accessori',
-        'Motori' => 'Motori',
-
+        'categories' => [
+            'elettronica' => 'Elettronica',
+            'abbigliamento' => 'Abbigliamento',
+            'salute e bellezza' => 'Salute e Bellezza',
+            'case e giardinaggio' => 'Casa e Giardinaggio',
+            'giocattoli' => 'Giocattoli',
+            'sport' => 'Sport',
+            'animali domestici' => 'Animali domestici',
+            'libri e riviste' => 'Libri e Riviste',
+            'accessori' => 'Accessori',
+            'motori' => 'Motori',
+        ],
         //!Senza categoria
 
         'category' => 'Categoria',

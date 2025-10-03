@@ -89,16 +89,20 @@ return [
         'singUp' => 'Register',
     ],
 
-    'Elettronica' => 'Electronics',
-    'Abbigliamento' => 'Clothing',
-    'Salute e bellezza' => 'Health & Beauty',
-    'Casa e giardinaggio' => 'Home & Garden',
-    'Giocattoli' => 'Toys',
-    'Sport' => 'Sports',
-    'Animali domestici' => 'Pets',
-    'Libri e riviste' => 'Books & Magazines',
-    'Accessori' => 'Accessories',
-    'Motori' => 'Motors',
+    // resources/lang/en/ui.php
+
+    'categories' => [
+        'elettronica' => 'Electronics',
+        'abbigliamento' => 'Clothing',
+        'salute e bellezza' => 'Health & Beauty',
+        'case e giardinaggio' => 'Home & Garden',
+        'giocattoli' => 'Toys',
+        'sport' => 'Sport',
+        'animali domestici' => 'Pets',
+        'libri e riviste' => 'Books & Magazines',
+        'accessori' => 'Accessories',
+        'motori' => 'Motors',
+    ],
 
     'category' => 'Category',
     'language' => 'Language',
