@@ -12,10 +12,22 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $perPage = $request->query('perPage', 10);
-        $articles = Article::with('category')
+        $articles = Article::with('category', 'images')
             ->where('is_accepted', true)
             ->latest()
             ->paginate($perPage);
+
+        $transformed = $articles->getCollection()->map(function ($article) {
+            return [
+                'id' => $article->id,
+                'title' => $article->title,
+                'price' => $article->price,
+                'category' => $article->category,
+                'image' => $article->images->isNotEmpty() ? $article->images->first()->getUrl(800, 800) : null
+            ];
+        });
+
+        $articles->setCollection($transformed);
 
         return response()->json($articles);
     }
@@ -60,9 +72,22 @@ class ArticleController extends Controller
         $perPage = $request->query('perPage', 10);
 
         $articles = $category->articles()
+            ->with('images')
             ->where('is_accepted', true)
             ->latest()
             ->paginate($perPage);
+
+        $transformed = $articles->getCollection()->map(function ($article) {
+            return [
+                'id' => $article->id,
+                'title' => $article->title,
+                'price' => $article->price,
+                'category' => $article->category,
+                'image' => $article->images->isNotEmpty() ? $article->images->first()->getUrl(800, 800) : null
+            ];
+        });
+
+        $articles->setCollection($transformed);
 
         return response()->json($articles);
     }

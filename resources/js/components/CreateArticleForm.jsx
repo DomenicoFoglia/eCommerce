@@ -28,12 +28,12 @@ export default function CreateArticleForm(){
         const selectedCategory = categories.find(cat => cat.id === parseInt(categoryId));
 
         
-        console.log("Titolo", title);
-        console.log("Descrizione:", description);
-        console.log("Prezzo:", price);
-        console.log("Categoria:", categoryId);
-        console.log("Categoria Nome:", selectedCategory ? selectedCategory.name : "Non selezionata");
-        console.log([...formData]);
+        // console.log("Titolo", title);
+        // console.log("Descrizione:", description);
+        // console.log("Prezzo:", price);
+        // console.log("Categoria:", categoryId);
+        // console.log("Categoria Nome:", selectedCategory ? selectedCategory.name : "Non selezionata");
+        // console.log([...formData]);
 
 
         axios.post('/articles', formData)
