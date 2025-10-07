@@ -35,6 +35,8 @@ Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->mid
 //Action nella mail
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
-
 //Cambio lingua
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
+//Ricerca
+Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');

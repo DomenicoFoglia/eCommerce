@@ -5,9 +5,10 @@
         <a class="navbar-brand" href="{{ route('homepage') }}">{{ __('ui.navbar.home') }}</a>
 
         <!-- Barra di ricerca -->
-        <form class="d-flex mx-auto my-2 my-lg-0 w-50 w-lg-25" role="search">
-            <input class="form-control me-2" type="search" placeholder="{{ __('ui.navbar.placeholderSearch') }}"
-                aria-label="Search">
+        <form class="d-flex mx-auto my-2 my-lg-0 w-50 w-lg-25" role="search" action="{{ route('article.search') }}"
+            method="GET">
+            <input name="query" class="form-control me-2" type="search"
+                placeholder="{{ __('ui.navbar.placeholderSearch') }}" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">{{ __('ui.navbar.search') }}</button>
         </form>
 
